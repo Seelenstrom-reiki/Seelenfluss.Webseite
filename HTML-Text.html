@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Andrea Carole Landolt – Ganzheitliche Reiki-Behandlungen für Menschen und Tiere. Energiearbeit, Fernheilung und tierisches Reiki in Basel und Umgebung." />
+  <title>Andrea Carole Landolt – Reiki für Mensch & Tier</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES
+    ============================================================ */
+    :root {
+      --color-bg:        #f9f7f2;
+      --color-bg-alt:    #f2ede4;
+      --color-bg-dark:   #3a3a35;
+      --color-primary:   #6b8f71;   /* sage green */
+      --color-primary-d: #4d6b53;   /* deep sage */
+      --color-accent:    #c8a96e;   /* warm gold */
+      --color-text:      #3a3a35;
+      --color-muted:     #7a7a72;
+      --color-light:     #ffffff;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+
+      --radius:  6px;
+      --shadow:  0 4px 32px rgba(58,58,53,0.10);
+      --transition: 0.35s ease;
+
+      --max-w: 1100px;
+      --section-pad: 96px 24px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    ul { list-style: none; }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { padding: var(--section-pad); }
+
+    .section--alt { background-color: var(--color-bg-alt); }
+
+    .label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 24px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-muted);
+      max-width: 640px;
+      line-height: 1.8;
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--color-accent);
+      margin: 24px 0;
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+      border: none;
+    }
+
+    .btn--primary {
+      background: var(--color-primary);
+      color: var(--color-light);
+    }
+    .btn--primary:hover {
+      background: var(--color-primary-d);
+      transform: translateY(-2px);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--color-primary);
+      border: 1.5px solid var(--color-primary);
+    }
+    .btn--outline:hover {
+      background: var(--color-primary);
+      color: var(--color-light);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .nav.scrolled {
+      background: rgba(249,247,242,0.96);
+      box-shadow: 0 2px 20px rgba(58,58,53,0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav__logo {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--color-text);
+      letter-spacing: 0.02em;
+    }
+    .nav__logo span { color: var(--color-primary); }
+
+    .nav__links {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .nav__links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text);
+      position: relative;
+      transition: color var(--transition);
+    }
+    .nav__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--color-primary);
+      transition: width var(--transition);
+    }
+    .nav__links a:hover { color: var(--color-primary); }
+    .nav__links a:hover::after { width: 100%; }
+
+    /* Hamburger */
+    .nav__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav__toggle span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--color-text);
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .nav__toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav__toggle.open span:nth-child(2) { opacity: 0; }
+    .nav__toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav */
+    .nav__mobile {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--color-bg);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    .nav__mobile.open { display: flex; }
+    .nav__mobile a {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--color-text);
+      transition: color var(--transition);
+    }
+    .nav__mobile a:hover { color: var(--color-primary); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #eef3ea 0%, #f9f7f2 50%, #f4ede0 100%);
+    }
+
+    /* Decorative circles */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 560px; height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(107,143,113,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,169,110,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 120px 24px 96px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero__content { animation: fadeUp 1s ease both; }
+
+    .hero__eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--color-text);
+      margin-bottom: 24px;
+    }
+    .hero__title em {
+      font-style: italic;
+      color: var(--color-primary);
+    }
+
+    .hero__sub {
+      font-size: 1.1rem;
+      color: var(--color-muted);
+      line-height: 1.8;
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+
+    .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* Decorative visual side */
+    .hero__visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1.2s ease 0.3s both;
+    }
+
+    .hero__mandala {
+      width: min(400px, 90%);
+      aspect-ratio: 1;
+      position: relative;
+    }
+
+    .hero__mandala svg {
+      width: 100%; height: 100%;
+      opacity: 0.85;
+      animation: rotateSlow 60s linear infinite;
+    }
+
+    /* ============================================================
+       REIKI INTRO
+    ============================================================ */
+    .reiki-intro .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .reiki-intro__quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--color-primary-d);
+      border-left: 3px solid var(--color-accent);
+      padding-left: 28px;
+    }
+
+    .reiki-intro__text p + p { margin-top: 16px; }
+
+    /* ============================================================
+       ANGEBOTE (OFFERS)
+    ============================================================ */
+    .offers__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 56px;
+    }
+
+    .offer-card {
+      background: var(--color-light);
+      border-radius: 12px;
+      padding: 40px 32px;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    }
+    .offer-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(58,58,53,0.15);
+    }
+
+    .offer-card__icon {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .offer-card__title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+
+    .offer-card__desc {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .offer-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: var(--color-bg-alt);
+      color: var(--color-primary-d);
+    }
+
+    /* ============================================================
+       FÜR WEN (FOR WHOM)
+    ============================================================ */
+    .forwhom__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 56px;
+    }
+
+    .forwhom__item h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: var(--color-text);
+    }
+
+    .forwhom__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(107,143,113,0.12);
+    }
+    .forwhom__list li::before {
+      content: '✦';
+      color: var(--color-accent);
+      font-size: 0.7rem;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       ÜBER MICH (ABOUT)
+    ============================================================ */
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about__portrait {
+      position: sticky;
+      top: 100px;
+    }
+
+    .about__portrait-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 40px rgba(58,58,53,0.18);
+    }
+
+    .about__portrait-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .about__portrait-name {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 1;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.95);
+      text-align: center;
+      padding: 20px 16px 18px;
+      background: linear-gradient(to top, rgba(58,58,53,0.65) 0%, transparent 100%);
+    }
+
+    .about__text p + p { margin-top: 20px; }
+
+    .about__text p {
+      font-size: 1.05rem;
+      color: var(--color-muted);
+      line-height: 1.85;
+    }
+
+    .about__text strong {
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       TERMIN / BOOKING
+    ============================================================ */
+    .booking {
+      background: linear-gradient(135deg, #eef3ea 0%, #f9f7f2 100%);
+    }
+
+    .booking .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .booking__form {
+      background: var(--color-light);
+      border-radius: 16px;
+      padding: 48px 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary-d);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 18px;
+      border: 1.5px solid rgba(107,143,113,0.25);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--color-text);
+      background: var(--color-bg);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(107,143,113,0.12);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b8f71' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 44px;
+    }
+
+    .booking__info h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    .booking__steps {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .booking__step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .booking__step-num {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: var(--color-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .booking__step-text strong {
+      display: block;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .booking__step-text span {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+    }
+
+    /* ============================================================
+       KONTAKT (CONTACT)
+    ============================================================ */
+    .contact__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+
+    .contact-card {
+      padding: 36px 28px;
+      border-radius: 12px;
+      background: var(--color-light);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .contact-card__icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p,
+    .contact-card a {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+      transition: color var(--transition);
+    }
+    .contact-card a:hover { color: var(--color-primary); }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--color-bg-dark);
+      color: rgba(255,255,255,0.55);
+      padding: 60px 24px;
+    }
+
+    .footer__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      text-align: center;
+    }
+
+    .footer__logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+    }
+    .footer__logo span { color: var(--color-accent); }
+
+    .footer__tagline {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      opacity: 0.6;
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer__links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      transition: color var(--transition);
+    }
+    .footer__links a:hover { color: var(--color-accent); }
+
+    .footer__copy {
+      font-size: 0.78rem;
+      opacity: 0.35;
+    }
+
+    .footer__divider {
+      width: 60px;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* ============================================================
+       SCROLL-REVEAL ANIMATIONS
+    ============================================================ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       SUCCESS MESSAGE
+    ============================================================ */
+    .form-group input[type="date"] {
+      color: var(--color-text);
+      cursor: pointer;
+    }
+
+    #submitBtn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-success {
+      display: none;
+      background: rgba(107,143,113,0.1);
+      border: 1px solid var(--color-primary);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: var(--color-primary-d);
+      line-height: 1.65;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-success.show { display: flex; }
+
+    .form-error {
+      display: none;
+      background: rgba(180,80,80,0.08);
+      border: 1px solid #c97070;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: #8b3a3a;
+      line-height: 1.6;
+    }
+    .form-error.show { display: block; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      :root { --section-pad: 72px 24px; }
+
+      .nav__links { display: none; }
+      .nav__toggle { display: flex; }
+
+      .hero__inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero__sub { margin-left: auto; margin-right: auto; }
+      .hero__actions { justify-content: center; }
+      .hero__visual { display: none; }
+
+      .reiki-intro .container { grid-template-columns: 1fr; gap: 40px; }
+      .offers__grid { grid-template-columns: 1fr; }
+      .forwhom__grid { grid-template-columns: 1fr; gap: 40px; }
+      .about .container { grid-template-columns: 1fr; }
+      .about__portrait { position: static; max-width: 280px; }
+      .booking .container { grid-template-columns: 1fr; }
+      .contact__grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .booking__form { padding: 32px 24px; }
+      .hero__title { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="nav" aria-label="Hauptnavigation">
+    <a href="#home" class="nav__logo">Andrea Carole Landolt<span>.</span></a>
+    <ul class="nav__links" role="list">
+      <li><a href="#reiki">Was ist Reiki</a></li>
+      <li><a href="#angebote">Angebote</a></li>
+      <li><a href="#ueber-mich">Über mich</a></li>
+      <li><a href="#termin" class="btn btn--primary" style="padding: 10px 24px;">Termin buchen</a></li>
+    </ul>
+    <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile navigation overlay -->
+  <nav class="nav__mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="#reiki" class="nav__mobile-link">Was ist Reiki</a>
+    <a href="#angebote" class="nav__mobile-link">Angebote</a>
+    <a href="#ueber-mich" class="nav__mobile-link">Über mich</a>
+    <a href="#termin" class="nav__mobile-link">Termin buchen</a>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero__inner">
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">Energiearbeit · Heilung · Harmonie</p>
+        <h1 class="hero__title">
+          Ganzheitliche<br>
+          Reiki-Behandlungen<br>
+          für <em>Mensch und Tier</em>
+        </h1>
+        <p class="hero__sub">
+          Finden Sie innere Balance und tiefe Entspannung – durch achtsame Energiearbeit,
+          die Körper, Geist und Seele in Einklang bringt.
+        </p>
+        <div class="hero__actions">
+          <a href="#termin" class="btn btn--primary">Termin buchen</a>
+          <a href="#reiki" class="btn btn--outline">Mehr erfahren</a>
+        </div>
+      </div>
+
+      <!-- Decorative SVG Mandala -->
+      <div class="hero__visual">
+        <div class="hero__mandala">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Outer rings -->
+            <circle cx="200" cy="200" r="195" stroke="#6b8f71" stroke-width="0.5" stroke-dasharray="4 8"/>
+            <circle cx="200" cy="200" r="165" stroke="#c8a96e" stroke-width="0.5" stroke-dasharray="3 6"/>
+            <circle cx="200" cy="200" r="135" stroke="#6b8f71" stroke-width="0.8" stroke-dasharray="6 10"/>
+            <!-- Petal groups (8 petals) -->
+            <g opacity="0.5">
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="#6b8f71" opacity="0.3"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="none" stroke="#6b8f71" stroke-width="0.8"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="#6b8f71" opacity="0.3" transform="rotate(45 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="none" stroke="#6b8f71" stroke-width="0.8" transform="rotate(45 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="#6b8f71" opacity="0.3" transform="rotate(90 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="none" stroke="#6b8f71" stroke-width="0.8" transform="rotate(90 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="#6b8f71" opacity="0.3" transform="rotate(135 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="none" stroke="#6b8f71" stroke-width="0.8" transform="rotate(135 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="#6b8f71" opacity="0.3" transform="rotate(180 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="none" stroke="#6b8f71" stroke-width="0.8" transform="rotate(180 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="#6b8f71" opacity="0.3" transform="rotate(225 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="none" stroke="#6b8f71" stroke-width="0.8" transform="rotate(225 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="#6b8f71" opacity="0.3" transform="rotate(270 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="none" stroke="#6b8f71" stroke-width="0.8" transform="rotate(270 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="#6b8f71" opacity="0.3" transform="rotate(315 200 200)"/>
+              <ellipse cx="200" cy="110" rx="14" ry="38" fill="none" stroke="#6b8f71" stroke-width="0.8" transform="rotate(315 200 200)"/>
+            </g>
+            <!-- Outer petals (accent) -->
+            <g opacity="0.35">
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(0 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(30 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(60 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(90 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(120 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(150 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(180 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(210 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(240 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(270 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(300 200 200)"/>
+              <ellipse cx="200" cy="68" rx="9" ry="28" fill="#c8a96e" transform="rotate(330 200 200)"/>
+            </g>
+            <!-- Center -->
+            <circle cx="200" cy="200" r="40" fill="white" opacity="0.7"/>
+            <circle cx="200" cy="200" r="28" fill="#6b8f71" opacity="0.2"/>
+            <circle cx="200" cy="200" r="16" fill="#6b8f71" opacity="0.5"/>
+            <circle cx="200" cy="200" r="7"  fill="#c8a96e"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WAS IST REIKI
+  ============================================================ -->
+  <section class="section reiki-intro" id="reiki">
+    <div class="container">
+
+      <div class="reiki-intro__quote reveal">
+        „Reiki ist die Kunst, die innere Stille zu berühren –
+        dort, wo Heilung beginnt."
+      </div>
+
+      <div class="reiki-intro__text reveal">
+        <span class="label">Was ist Reiki?</span>
+        <h2 class="section-title">Universelle Lebensenergie</h2>
+        <div class="divider"></div>
+        <p>
+          Das japanische Wort <strong>Reiki</strong> setzt sich zusammen aus <em>Rei</em> (universell, alles umfassend)
+          und <em>Ki</em> (Lebensenergie). Reiki ist eine sanfte, ganzheitliche Methode der Energiearbeit,
+          die den natürlichen Energiefluss im Körper unterstützt und aktiviert.
+        </p>
+        <p>
+          Durch das Auflegen der Hände – oder über Distanz – werden Blockaden im Energiesystem gelöst.
+          Der Körper erhält Impulse, die seine Selbstheilungskräfte anregen. Reiki wirkt auf allen Ebenen:
+          körperlich, emotional, mental und spirituell.
+        </p>
+        <p>
+          Reiki ist kein Ersatz für medizinische Behandlungen, sondern eine ergänzende Methode,
+          die Wohlbefinden, innere Balance und Lebensqualität fördert –
+          für Menschen und für unsere tierischen Begleiter.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ANGEBOTE
+  ============================================================ -->
+  <section class="section section--alt" id="angebote">
+    <div class="container">
+      <span class="label reveal">Meine Angebote</span>
+      <h2 class="section-title reveal">Behandlungen mit Herz</h2>
+      <p class="section-subtitle reveal">
+        Jede Behandlung ist individuell und auf Ihre Bedürfnisse abgestimmt.
+        Ich begleite Sie mit Einfühlungsvermögen und achtsamer Präsenz.
+      </p>
+
+      <div class="offers__grid">
+
+        <!-- Reiki für Menschen -->
+        <article class="offer-card reveal">
+          <span class="offer-card__icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Lotus flower -->
+            <ellipse cx="24" cy="30" rx="6" ry="10" fill="#6b8f71" opacity="0.15" stroke="#6b8f71" stroke-width="1.2"/>
+            <ellipse cx="14" cy="30" rx="5" ry="9" fill="#6b8f71" opacity="0.12" stroke="#6b8f71" stroke-width="1.2" transform="rotate(-20 14 30)"/>
+            <ellipse cx="34" cy="30" rx="5" ry="9" fill="#6b8f71" opacity="0.12" stroke="#6b8f71" stroke-width="1.2" transform="rotate(20 34 30)"/>
+            <ellipse cx="8"  cy="32" rx="4" ry="7"  fill="#c8a96e" opacity="0.15" stroke="#c8a96e" stroke-width="1.2" transform="rotate(-35 8 32)"/>
+            <ellipse cx="40" cy="32" rx="4" ry="7"  fill="#c8a96e" opacity="0.15" stroke="#c8a96e" stroke-width="1.2" transform="rotate(35 40 32)"/>
+            <circle cx="24" cy="22" r="5" fill="#6b8f71" opacity="0.7"/>
+            <circle cx="24" cy="22" r="2.5" fill="#c8a96e"/>
+            <line x1="24" y1="38" x2="24" y2="44" stroke="#6b8f71" stroke-width="1.5"/>
+            <line x1="16" y1="42" x2="32" y2="42" stroke="#6b8f71" stroke-width="1.5"/>
+          </svg>
+        </span>
+          <h3 class="offer-card__title">Reiki für Menschen</h3>
+          <p class="offer-card__desc">
+            In einer ruhigen, geborgenen Atmosphäre lege ich sanft meine Hände auf
+            oder über den Körper. Die Energie fliesst dort, wo sie gebraucht wird –
+            ganz von selbst.
+          </p>
+          <p class="offer-card__desc">
+            <strong>Gut geeignet bei:</strong> Stress, Erschöpfung, emotionalen Belastungen,
+            Schlafproblemen, innerer Unruhe und dem Wunsch nach Tiefenentspannung.
+          </p>
+          <div class="offer-card__tags">
+            <span class="tag">Entspannung</span>
+            <span class="tag">Balance</span>
+            <span class="tag">Energie</span>
+            <span class="tag">ca. 60–90 Min.</span>
+          </div>
+        </article>
+
+        <!-- Fernheilung -->
+        <article class="offer-card reveal">
+          <span class="offer-card__icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Infinity / cosmic waves -->
+            <circle cx="24" cy="24" r="20" stroke="#6b8f71" stroke-width="0.8" stroke-dasharray="3 5" opacity="0.5"/>
+            <circle cx="24" cy="24" r="14" stroke="#c8a96e" stroke-width="0.8" stroke-dasharray="2 4" opacity="0.6"/>
+            <circle cx="24" cy="24" r="8"  stroke="#6b8f71" stroke-width="1" opacity="0.7"/>
+            <!-- Infinity symbol -->
+            <path d="M16 24 C16 20 19 18 22 20 C25 22 27 22 30 20 C33 18 36 20 36 24 C36 28 33 30 30 28 C27 26 25 26 22 28 C19 30 16 28 16 24Z" stroke="#6b8f71" stroke-width="1.5" fill="#6b8f71" fill-opacity="0.12"/>
+            <circle cx="24" cy="24" r="2.5" fill="#c8a96e"/>
+          </svg>
+        </span>
+          <h3 class="offer-card__title">Fernheilung</h3>
+          <p class="offer-card__desc">
+            Energie kennt keine Grenzen. Bei der Fernbehandlung übertrage ich Reiki-Energie
+            auf Distanz – Sie befinden sich dabei in Ihrer vertrauten Umgebung.
+            Besonders hilfreich, wenn eine persönliche Sitzung nicht möglich ist.
+          </p>
+          <p class="offer-card__desc">
+            <strong>Vorteile:</strong> Völlig ortsunabhängig, flexibel terminierbar,
+            genauso wirksam wie eine Behandlung vor Ort.
+          </p>
+          <div class="offer-card__tags">
+            <span class="tag">Distanzbehandlung</span>
+            <span class="tag">Flexibel</span>
+            <span class="tag">Ortsunabhängig</span>
+          </div>
+        </article>
+
+        <!-- Reiki für Tiere -->
+        <article class="offer-card reveal">
+          <span class="offer-card__icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Stylised paw with energy -->
+            <ellipse cx="24" cy="30" rx="9" ry="7" fill="#6b8f71" fill-opacity="0.15" stroke="#6b8f71" stroke-width="1.3"/>
+            <ellipse cx="14" cy="22" rx="3.5" ry="4.5" fill="#6b8f71" fill-opacity="0.2" stroke="#6b8f71" stroke-width="1.2"/>
+            <ellipse cx="20" cy="18" rx="3.5" ry="4.5" fill="#6b8f71" fill-opacity="0.2" stroke="#6b8f71" stroke-width="1.2"/>
+            <ellipse cx="28" cy="18" rx="3.5" ry="4.5" fill="#6b8f71" fill-opacity="0.2" stroke="#6b8f71" stroke-width="1.2"/>
+            <ellipse cx="34" cy="22" rx="3.5" ry="4.5" fill="#6b8f71" fill-opacity="0.2" stroke="#6b8f71" stroke-width="1.2"/>
+            <!-- Sparkle/energy dots -->
+            <circle cx="24" cy="30" r="2" fill="#c8a96e"/>
+            <circle cx="38" cy="12" r="1.5" fill="#c8a96e" opacity="0.7"/>
+            <circle cx="10" cy="10" r="1" fill="#6b8f71" opacity="0.6"/>
+            <line x1="38" y1="8" x2="38" y2="16" stroke="#c8a96e" stroke-width="1" opacity="0.5"/>
+            <line x1="34" y1="12" x2="42" y2="12" stroke="#c8a96e" stroke-width="1" opacity="0.5"/>
+          </svg>
+        </span>
+          <h3 class="offer-card__title">Reiki für Tiere</h3>
+          <p class="offer-card__desc">
+            Tiere reagieren oft besonders feinfühlig und offen auf Reiki. Ob Hund, Katze,
+            Pferd oder ein anderes Tier – ich begleite Ihre tierischen Begleiter
+            liebevoll und respektiere ihre Grenzen stets.
+          </p>
+          <p class="offer-card__desc">
+            <strong>Wirkung:</strong> Beruhigung bei Ängsten, Unterstützung bei Erkrankungen,
+            Begleitung in Stress- oder Veränderungssituationen.
+          </p>
+          <div class="offer-card__tags">
+            <span class="tag">Haustiere</span>
+            <span class="tag">Pferde</span>
+            <span class="tag">Sanfte Energie</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FÜR WEN GEEIGNET
+  ============================================================ -->
+  <section class="section" id="fuerwen">
+    <div class="container">
+      <span class="label reveal">Für wen?</span>
+      <h2 class="section-title reveal">Reiki ist für jeden</h2>
+      <div class="divider reveal"></div>
+      <p class="section-subtitle reveal">
+        Ob Mensch oder Tier – Reiki kann in vielen Lebenssituationen
+        eine wohltuende Unterstützung sein.
+      </p>
+
+      <div class="forwhom__grid">
+
+        <div class="forwhom__item reveal">
+          <h3><svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="display:inline;vertical-align:middle;margin-right:10px"><circle cx="14" cy="14" r="12" stroke="#6b8f71" stroke-width="1" fill="#6b8f71" fill-opacity="0.08"/><circle cx="14" cy="10" r="3" fill="#6b8f71" opacity="0.7"/><path d="M8 20 C8 16 10 14 14 14 C18 14 20 16 20 20" stroke="#6b8f71" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg> Für Menschen</h3>
+          <ul class="forwhom__list" role="list">
+            <li>Personen mit anhaltendem Stress oder Burnout</li>
+            <li>Kinder und Jugendliche bei Schulstress</li>
+            <li>Menschen mit emotionalen Belastungen oder Ängsten</li>
+            <li>Bei Schlafstörungen und innerer Unruhe</li>
+            <li>Zur Begleitung von medizinischen Therapien</li>
+            <li>Nach Verlust und in schwierigen Lebensphasen</li>
+            <li>Zur allgemeinen Prävention und Selbstfürsorge</li>
+            <li>Menschen, die sich mehr Ausgeglichenheit wünschen</li>
+          </ul>
+        </div>
+
+        <div class="forwhom__item reveal">
+          <h3><svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="display:inline;vertical-align:middle;margin-right:10px"><circle cx="14" cy="14" r="12" stroke="#6b8f71" stroke-width="1" fill="#6b8f71" fill-opacity="0.08"/><ellipse cx="14" cy="16" rx="5" ry="4" fill="#6b8f71" opacity="0.5"/><ellipse cx="9" cy="13" rx="2" ry="2.5" fill="#6b8f71" opacity="0.4"/><ellipse cx="14" cy="11" rx="2" ry="2.5" fill="#6b8f71" opacity="0.4"/><ellipse cx="19" cy="13" rx="2" ry="2.5" fill="#6b8f71" opacity="0.4"/><circle cx="14" cy="16" r="1.2" fill="#c8a96e"/></svg> Für Tiere</h3>
+          <ul class="forwhom__list" role="list">
+            <li>Tiere mit Verhaltensauffälligkeiten oder Ängsten</li>
+            <li>Zur harmonischen Mensch-Tier-Beziehung</li>
+            <li>Unterstützung bei chronischen Beschwerden</li>
+            <li>Begleitung bei Trauer und Verlust</li>
+            <li>In der Rekonvaleszenz nach Operationen</li>
+            <li>Für ältere oder geschwächte Tiere</li>
+            <li>Bei Stress durch Umzug, Verlust oder Veränderung</li>
+            <li>Pferde vor oder nach Wettkämpfen</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ÜBER MICH
+  ============================================================ -->
+  <section class="section section--alt about" id="ueber-mich">
+    <div class="container">
+
+      <div class="about__portrait reveal">
+        <div class="about__portrait-img">
+          <img src="images/andrea.png" alt="Andrea Carole Landolt – Reiki-Therapeutin" />
+          <p class="about__portrait-name">Andrea Carole Landolt<br><em style="font-size:0.85rem; opacity:0.8;">Reiki-Therapeutin</em></p>
+        </div>
+      </div>
+
+      <div class="about__text">
+        <span class="label reveal">Über mich</span>
+        <h2 class="section-title reveal">Mit Herz am Anfang<br>eines neuen Weges</h2>
+        <div class="divider reveal"></div>
+
+        <p class="reveal">
+          Herzlich willkommen! Ich bin <strong>Andrea Carole Landolt</strong> – Reiki-Meisterin und leidenschaftliche Begleiterin auf dem Weg zu mehr innerer Balance, für Menschen und Tiere.
+        </p>
+        <p class="reveal">
+          Dieses Jahr habe ich meine Ausbildung in traditionellem Usui-Reiki erfolgreich abgeschlossen –
+          ein Schritt, auf den ich lange hingearbeitet habe und der für mich viel mehr als eine Qualifikation bedeutet:
+          er ist der Beginn eines Weges, dem ich mich mit ganzem Herzen widme.
+        </p>
+        <p class="reveal">
+          Meine Reise mit Reiki begann aus einem tief persönlichen Wunsch heraus –
+          dem Wunsch, achtsamer zu leben, tiefer zu heilen und anderen auf einfühlsame,
+          sanfte Weise beizustehen. Ich bringe frische Energie, echte Neugier
+          und grosse Offenheit in jede Begegnung mit.
+        </p>
+        <p class="reveal">
+          Die Arbeit mit Tieren liegt mir besonders am Herzen. Tiere spüren Energie unmittelbar
+          und unverfälscht – ihre Reaktion auf Reiki ist oft rührend und direkt.
+          Es ist mir ein tiefes Anliegen, auch ihnen Fürsorge und Heilimpulse zukommen zu lassen.
+        </p>
+        <p class="reveal">
+          <strong>Ich freue mich darauf, Sie auf Ihrem Weg zu begleiten – mit Offenheit, Achtsamkeit und Herz.</strong>
+        </p>
+      </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TERMIN BUCHEN
+  ============================================================ -->
+  <section class="section booking" id="termin">
+    <div class="container">
+
+      <div class="booking__info">
+        <span class="label reveal">Termin</span>
+        <h2 class="section-title reveal">Ihren Termin anfragen</h2>
+        <div class="divider reveal"></div>
+        <p class="section-subtitle reveal">
+          Füllen Sie das Formular aus – ich melde mich persönlich bei Ihnen,
+          um gemeinsam einen passenden Termin zu finden.
+        </p>
+
+        <div class="booking__steps reveal">
+          <div class="booking__step">
+            <div class="booking__step-num">1</div>
+            <div class="booking__step-text">
+              <strong>Anfrage senden</strong>
+              <span>Formular ausfüllen und Behandlung wählen</span>
+            </div>
+          </div>
+          <div class="booking__step">
+            <div class="booking__step-num">2</div>
+            <div class="booking__step-text">
+              <strong>Persönliche Rückmeldung</strong>
+              <span>Ich kontaktiere Sie innerhalb von 48 Stunden</span>
+            </div>
+          </div>
+          <div class="booking__step">
+            <div class="booking__step-num">3</div>
+            <div class="booking__step-text">
+              <strong>Termin bestätigen</strong>
+              <span>Wir legen gemeinsam Datum und Zeit fest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking Form -->
+      <div class="booking__form reveal">
+
+        <!-- Formspree: https://formspree.io/f/xlgzeenq → seelenstrom.reiki@gmail.com -->
+        <form id="bookingForm"
+              action="https://formspree.io/f/xlgzeenq"
+              method="POST"
+              novalidate>
+
+          <input type="hidden" name="_replyto" value="seelenstrom.reiki@gmail.com" />
+          <input type="hidden" name="_subject" value="Neue Terminanfrage – Seelenstrom Reiki" />
+
+          <div class="form-group">
+            <label for="name">Ihr Name</label>
+            <input type="text" id="name" name="name" placeholder="Vorname Nachname" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-Mail-Adresse</label>
+            <input type="email" id="email" name="email" placeholder="ihre@email.ch" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefon (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+41 00 000 00 00" />
+          </div>
+
+          <div class="form-group">
+            <label for="behandlung">Gewünschte Behandlung</label>
+            <select id="behandlung" name="behandlung" required>
+              <option value="" disabled selected>Bitte wählen …</option>
+              <option value="Reiki für Menschen">Reiki für Menschen</option>
+              <option value="Fernheilung">Fernheilung</option>
+              <option value="Reiki für Tiere">Reiki für Tiere</option>
+              <option value="Erstgespräch / Kennenlerntermin">Erstgespräch / Kennenlerntermin</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="wunschtermin">Wunschtermin</label>
+            <input type="date" id="wunschtermin" name="wunschtermin" />
+          </div>
+
+          <div class="form-group">
+            <label for="nachricht">Ihre Nachricht</label>
+            <textarea id="nachricht" name="nachricht" placeholder="Erzählen Sie mir kurz, was Sie beschäftigt oder was Sie sich wünschen …"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary" id="submitBtn" style="width: 100%;">
+            Termin anfragen
+          </button>
+
+          <!-- ✅ Bestätigungsmeldung -->
+          <div class="form-success" id="formSuccess" role="alert">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:inline;vertical-align:middle;margin-right:10px;flex-shrink:0"><circle cx="12" cy="12" r="11" stroke="#6b8f71" stroke-width="1.5"/><path d="M7 12l3.5 3.5L17 8.5" stroke="#6b8f71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Vielen Dank für deine Anfrage. Deine Nachricht wurde erfolgreich übermittelt. Ich melde mich so bald wie möglich bei dir.
+          </div>
+
+          <!-- ❌ Fehlermeldung -->
+          <div class="form-error" id="formError" role="alert"></div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KONTAKT
+  ============================================================ -->
+  <section class="section section--alt" id="kontakt">
+    <div class="container">
+      <span class="label reveal">Kontakt</span>
+      <h2 class="section-title reveal">So erreichen Sie mich</h2>
+
+      <div class="contact__grid">
+
+        <div class="contact-card reveal">
+          <div class="contact-card__icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4C13.03 4 9 8.03 9 13c0 7 9 19 9 19s9-12 9-19c0-4.97-4.03-9-9-9Z" stroke="#6b8f71" stroke-width="1.5" fill="#6b8f71" fill-opacity="0.12"/>
+            <circle cx="18" cy="13" r="3.5" fill="#6b8f71" opacity="0.7"/>
+          </svg>
+        </div>
+          <h3>Adresse</h3>
+          <p>
+            Andrea Carole Landolt<br>
+            Mürlefeld 3A<br>
+            5630 Muri AG, Schweiz
+          </p>
+        </div>
+
+        <div class="contact-card reveal">
+          <div class="contact-card__icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="15" stroke="#6b8f71" stroke-width="0.8" fill="#6b8f71" fill-opacity="0.06"/>
+            <path d="M12 13c0-1 .8-2 1.8-2h1.4l2 4.5-1.5 1c.8 1.8 2.3 3.3 4.1 4.1l1-1.5L25 21.2v1.4c0 1-.8 1.8-1.8 1.8C15 24 12 17 12 13Z" stroke="#6b8f71" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          </svg>
+        </div>
+          <h3>Telefon</h3>
+          <p>
+            <a href="tel:+41797592483">+41 79 759 24 83</a><br>
+            <span style="font-size:0.82rem;">Mo – Fr, 09:00 – 18:00 Uhr</span>
+          </p>
+        </div>
+
+        <div class="contact-card reveal">
+          <div class="contact-card__icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="15" stroke="#6b8f71" stroke-width="0.8" fill="#6b8f71" fill-opacity="0.06"/>
+            <rect x="9" y="12" width="18" height="13" rx="2" stroke="#6b8f71" stroke-width="1.4" fill="none"/>
+            <path d="M9 14l9 6 9-6" stroke="#6b8f71" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+          <h3>E-Mail</h3>
+          <p>
+            <a href="mailto:seelenstrom.reiki@gmail.com">seelenstrom.reiki@gmail.com</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer__inner">
+      <div class="footer__logo">Andrea Carole Landolt<span>.</span></div>
+      <p class="footer__tagline">Reiki für Mensch &amp; Tier · Muri AG</p>
+      <div class="footer__divider"></div>
+      <nav class="footer__links" aria-label="Footer Navigation">
+        <a href="#home">Start</a>
+        <a href="#reiki">Was ist Reiki</a>
+        <a href="#angebote">Angebote</a>
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#termin">Termin</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#impressum" onclick="event.preventDefault(); openModal('modalImpressum')">Impressum</a>
+        <a href="#datenschutz" onclick="event.preventDefault(); openModal('modalDatenschutz')">Datenschutz</a>
+      </nav>
+      <p class="footer__copy">© 2026 Andrea Carole Landolt · Alle Rechte vorbehalten</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    /* ---- Sticky Nav ---- */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ---- Mobile Menu ---- */
+    const toggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('navMobile');
+    const mobileLinks = mobileNav.querySelectorAll('a');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.classList.toggle('open');
+      mobileNav.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.classList.remove('open');
+        mobileNav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    /* ---- Scroll Reveal ---- */
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    /* ---- Formspree AJAX Submit → seelenstrom.reiki@gmail.com ---- */
+    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const form     = this;
+      const btn      = document.getElementById('submitBtn');
+      const success  = document.getElementById('formSuccess');
+      const errorBox = document.getElementById('formError');
+
+      // Pflichtfelder prüfen
+      const name       = document.getElementById('name').value.trim();
+      const email      = document.getElementById('email').value.trim();
+      const behandlung = document.getElementById('behandlung').value;
+
+      if (!name || !email || !behandlung) {
+        errorBox.textContent = 'Bitte füllen Sie mindestens Name, E-Mail und Behandlung aus.';
+        errorBox.classList.add('show');
+        return;
+      }
+
+      // Ladezustand
+      btn.disabled    = true;
+      btn.textContent = 'Wird gesendet …';
+      success.classList.remove('show');
+      errorBox.classList.remove('show');
+
+      try {
+        const response = await fetch(form.action, {
+          method:  'POST',
+          body:    new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          success.classList.add('show');
+          success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          btn.textContent = 'Gesendet ✓';
+          setTimeout(() => {
+            btn.disabled    = false;
+            btn.textContent = 'Termin anfragen';
+          }, 4000);
+        } else {
+          const json = await response.json().catch(() => ({}));
+          const msg  = json?.errors?.map(e => e.message).join(', ')
+                       || 'Es ist ein Fehler aufgetreten. Bitte versuche es später erneut.';
+          errorBox.textContent = msg;
+          errorBox.classList.add('show');
+          btn.disabled    = false;
+          btn.textContent = 'Termin anfragen';
+        }
+      } catch (err) {
+        errorBox.textContent = 'Keine Verbindung möglich. Bitte schreibe direkt an seelenstrom.reiki@gmail.com';
+        errorBox.classList.add('show');
+        btn.disabled    = false;
+        btn.textContent = 'Termin anfragen';
+      }
+    });
+
+    /* ---- Modal: Datenschutz & Impressum ---- */
+    function openModal(id) {
+      document.getElementById(id).classList.add('modal--open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('modal--open');
+      document.body.style.overflow = '';
+    }
+    // Close on backdrop click
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) closeModal(this.id);
+      });
+    });
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') document.querySelectorAll('.modal--open').forEach(m => closeModal(m.id));
+    });
+  </script>
+
+  <!-- ============================================================
+       MODAL CSS
+  ============================================================ -->
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(58,58,53,0.55);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal--open { display: flex; }
+
+    .modal__box {
+      background: var(--color-bg);
+      border-radius: 16px;
+      padding: 48px 44px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(58,58,53,0.25);
+    }
+
+    .modal__close {
+      position: absolute;
+      top: 20px; right: 24px;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--color-muted);
+      line-height: 1;
+      transition: color var(--transition);
+    }
+    .modal__close:hover { color: var(--color-text); }
+
+    .modal__box h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+
+    .modal__box .divider { margin: 16px 0 24px; }
+
+    .modal__box h3 {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary-d);
+      margin: 28px 0 8px;
+    }
+
+    .modal__box p {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      line-height: 1.8;
+    }
+
+    .modal__box a { color: var(--color-primary); }
+
+    @media (max-width: 600px) {
+      .modal__box { padding: 36px 24px; }
+    }
+  </style>
+
+  <!-- ============================================================
+       DATENSCHUTZ MODAL
+  ============================================================ -->
+  <div class="modal" id="modalDatenschutz" role="dialog" aria-modal="true" aria-labelledby="datenschutzTitle">
+    <div class="modal__box">
+      <button class="modal__close" onclick="closeModal('modalDatenschutz')" aria-label="Schliessen">&times;</button>
+      <h2 id="datenschutzTitle">Datenschutzerklärung</h2>
+      <div class="divider"></div>
+
+      <p>Der Schutz deiner persönlichen Daten ist mir ein besonderes Anliegen. Ich behandle deine personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften (Schweiz DSG / DSGVO).</p>
+
+      <h3>Erhebung und Verarbeitung von Daten</h3>
+      <p>Beim Besuch dieser Website werden automatisch technische Daten erfasst (z. B. IP-Adresse, Browsertyp, Datum und Uhrzeit). Diese Daten dienen der Sicherstellung eines störungsfreien Betriebs der Website.</p>
+
+      <h3>Kontaktaufnahme</h3>
+      <p>Wenn du mich per Formular oder E-Mail kontaktierst, werden deine Angaben zwecks Bearbeitung der Anfrage gespeichert. Diese Daten gebe ich nicht ohne deine Einwilligung weiter.</p>
+
+      <h3>Terminbuchung</h3>
+      <p>Die im Rahmen der Terminbuchung eingegebenen Daten (Name, E-Mail, Nachricht) werden ausschliesslich zur Terminvereinbarung verwendet.</p>
+
+      <h3>Cookies</h3>
+      <p>Diese Website kann Cookies verwenden, um die Benutzerfreundlichkeit zu verbessern. Du kannst die Speicherung von Cookies in deinem Browser deaktivieren.</p>
+
+      <h3>Deine Rechte</h3>
+      <p>Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner gespeicherten Daten.</p>
+
+      <h3>Kontakt</h3>
+      <p>
+        Verantwortlich für die Datenverarbeitung:<br>
+        <strong>Andrea Carole Landolt</strong><br>
+        Mürlefeld 3A, 5630 Muri AG<br>
+        <a href="mailto:seelenstrom.reiki@gmail.com">seelenstrom.reiki@gmail.com</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       IMPRESSUM MODAL
+  ============================================================ -->
+  <div class="modal" id="modalImpressum" role="dialog" aria-modal="true" aria-labelledby="impressumTitle">
+    <div class="modal__box">
+      <button class="modal__close" onclick="closeModal('modalImpressum')" aria-label="Schliessen">&times;</button>
+      <h2 id="impressumTitle">Impressum</h2>
+      <div class="divider"></div>
+
+      <h3>Angaben gemäss Art. 3 DSG</h3>
+      <p>
+        <strong>Andrea Carole Landolt</strong><br>
+        Reiki-Meisterin<br>
+        Mürlefeld 3A<br>
+        5630 Muri AG, Schweiz<br><br>
+        <a href="tel:+41797592483">+41 79 759 24 83</a><br>
+        <a href="mailto:seelenstrom.reiki@gmail.com">seelenstrom.reiki@gmail.com</a>
+      </p>
+
+      <h3>Haftungsausschluss</h3>
+      <p>Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Reiki ersetzt keine ärztliche Behandlung.</p>
+
+      <h3>Website</h3>
+      <p>Diese Website wurde erstellt von <strong>Joy Landolt</strong>.</p>
+    </div>
+  </div>
+
+</body>
+</html>
